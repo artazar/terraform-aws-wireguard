@@ -84,6 +84,12 @@ variable "wg_server_private_key" {
   description = "WG server private key."
 }
 
+variable "wg_server_public_key" {
+  type        = string
+  default     = null
+  description = "WG server public key."
+}
+
 variable "ami_id" {
   default     = null # we check for this and use a data provider since we can't use it here
   description = "The AWS AMI to use for the WG server, defaults to the latest Ubuntu 20.04 AMI if not specified."
