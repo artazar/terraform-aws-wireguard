@@ -1,6 +1,19 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - 2024-10-03
+
+### Added
+- WireGuard client configs as output
+
+## [1.3.0] - 2021-03-21
+
+### Added
+- Server private key from SSM
+- EIP creation
+- Route53 with Geo policy
+- Update README & examples
+
 ## [1.2.0] - 2021-03-12
 
 ### Added
