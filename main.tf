@@ -116,7 +116,7 @@ resource "aws_autoscaling_group" "wireguard_asg" {
 
 resource "aws_ssm_parameter" "wireguard_server_private_key" {
   count       = var.use_ssm ? 1 : 0
-  name        = "/wireguard/wg-server-private-key"
+  name        = "/wireguard/wg-${var.env}-${var.region}-server-private-key"
   description = "WireGuard Server private key"
   type        = "SecureString"
   value       = var.wg_server_private_key
