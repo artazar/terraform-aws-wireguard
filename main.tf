@@ -14,14 +14,14 @@ locals {
 resource "aws_eip" "wireguard" {
   vpc = true
   tags = {
-    Name = "wireguard"
+    Name = "wireguard-${var.env}-${var.region}"
   }
 }
 
 resource "aws_route53_record" "wireguard" {
   count           = var.use_route53 ? 1 : 0
   allow_overwrite = true
-  set_identifier  = "wireguard-${var.region}"
+  set_identifier  = "wireguard-${var.env}-${var.region}"
   zone_id         = var.route53_hosted_zone_id
   name            = var.route53_record_name
   type            = "A"
