@@ -16,6 +16,7 @@ output "wg_config" {
         PublicKey = ${var.wg_server_public_key}
         AllowedIPs = ${var.wg_server_net}
         Endpoint = ${aws_eip.wireguard.public_ip}:${var.wg_server_port}
+        PersistentKeepalive = 25
         EOF
   }
 }
