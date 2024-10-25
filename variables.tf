@@ -30,6 +30,11 @@ variable "vpc_id" {
   description = "The VPC ID in which Terraform will launch the resources."
 }
 
+variable "vpc_cidr_block" {
+  type        = string
+  description = "The VPC CIDR block to use in AllowedIPs."
+}
+
 variable "subnet_ids" {
   type        = list(string)
   description = "A list of subnets for the Autoscaling Group to use for launching instances. May be a single subnet, but it must be an element in a list."
